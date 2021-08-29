@@ -1,6 +1,5 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Utils from '../Utilities';
 import {
   Form,
   FormControl,
@@ -9,6 +8,7 @@ import {
   Container
 } from 'react-bootstrap'
 
+import Utils from '../Utilities';
 let API_URL = Utils.API_URL
 
 class Home extends React.Component {
@@ -24,7 +24,6 @@ class Home extends React.Component {
     fetch(`${API_URL}/getposts`)
       .then(res => res.json())
       .then(posts => {
-        console.log(posts)
         posts.forEach(post => this.addCard(post))
       })
   }
